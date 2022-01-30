@@ -4,6 +4,7 @@ let pars = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  frameRate(120);
 }
 
 function draw() {
