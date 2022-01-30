@@ -35,7 +35,7 @@ function particle(x, y, velx, vely, r_, g_, b_) {
     particle.prototype.createNew = function() {
         if (this.exploded) {
             for(let i = 0; i < 15; i++) {
-                this.newPars.push(new particle(this.pos.x, this.pos.y, random(-3,3), random(-3,3), this.color));
+                this.newPars.push(new particle(this.pos.x, this.pos.y, random(-3,3)+this.vel.x, random(-3,3)+this.vel.y, this.color));
             }
         }
     }
