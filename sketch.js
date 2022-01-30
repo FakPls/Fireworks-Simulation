@@ -4,24 +4,24 @@ let pars = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(120);
 }
 
 function draw() {
   background(0);
 
   if(random(1) > 0.99) {
-    pars.push(new particle(random(width), height, 0, -random(8, 18), random(255), random(255), random(255)));
+    pars.push(new particle(random(width), height, random(-1,1), -random(8, 18), random(255), random(255), random(255)));
   }
 
-  for(let par of pars) {
-    par.show();
-    par.update();
-    par.explode();
-    par.createNew();
+  for(let i = pars.length-1; i > 0; i--) {
+    console.log(i)
+    pars[i].show();
+    pars[i].update();
+    pars[i].explode();
+    pars[i].createNew();
 
-    if(par.pos.y > height+500) {
-      pars.splice(par, 1);
+    if(pars[i].pos.y > height+500) {
+      pars.splice(i, 1);
     }
   }
 
