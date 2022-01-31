@@ -9,7 +9,7 @@ function setup() {
 function draw() {
   background(0);
 
-  if(random(1) > 0.99) {
+  if(random(1) > 0) {
     pars.push(new particle(random(width), height, random(-1,1), -random(8, 18), random(255), random(255), random(255)));
   }
 
